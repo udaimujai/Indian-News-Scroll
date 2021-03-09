@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="146dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/catagory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/add_widget"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+    <Switch
+        android:id="@+id/switch_National"
+        android:layout_width="wrap_content"
+        android:layout_height="85dp"
+        android:layout_marginTop="36dp"
+        android:checked="true"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:text="@string/national"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/switch_international"
+        android:layout_width="wrap_content"
+        android:layout_height="85dp"
+        android:checked="true"
+        android:text="@string/international"
+        app:layout_constraintEnd_toEndOf="@+id/switch_National"
+        app:layout_constraintTop_toBottomOf="@+id/switch_National" />
+
+    <Switch
+        android:id="@+id/switch_State"
+        android:layout_width="wrap_content"
+        android:layout_height="85dp"
+        android:layout_marginTop="1dp"
+        android:checked="true"
+        android:text="@string/state"
+        app:layout_constraintEnd_toEndOf="@+id/switch_international"
+        app:layout_constraintTop_toBottomOf="@+id/switch_international" />
+
+    <Switch
+        android:id="@+id/switch_Business"
+        android:layout_width="wrap_content"
+        android:layout_height="85dp"
+        android:checked="true"
+        android:text="@string/business"
+        app:layout_constraintEnd_toEndOf="@+id/switch_State"
+        app:layout_constraintTop_toBottomOf="@+id/switch_State" />
+
+    <Switch
+        android:id="@+id/switch_Sports"
+        android:layout_width="wrap_content"
+        android:layout_height="85dp"
+        android:layout_marginTop="1dp"
+        android:checked="true"
+        android:text="@string/sports"
+        app:layout_constraintEnd_toEndOf="@+id/switch_Business"
+        app:layout_constraintTop_toBottomOf="@+id/switch_Business" />
+
+    <Switch
+        android:id="@+id/switch_Regional"
+        android:layout_width="wrap_content"
+        android:layout_height="85dp"
+        android:layout_marginTop="1dp"
+        android:checked="true"
+        android:text="@string/regional"
+        app:layout_constraintEnd_toEndOf="@+id/switch_Sports"
+        app:layout_constraintTop_toBottomOf="@+id/switch_Sports" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="109dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="82dp" />
+
+
+        android:text="@string/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
