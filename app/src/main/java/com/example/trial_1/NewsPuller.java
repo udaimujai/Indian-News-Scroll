@@ -25,9 +25,9 @@ public  class NewsPuller {
     static NewsLinks x = new NewsLinks();
     private  static ReadFromWeb tasker = new ReadFromWeb();
     private  static ReadFromWeb tasker11 = new ReadFromWeb();
-    public static String getStr0,getStr1,getStr2,getStr3,getStr4,getStr5;
-    public static String hot_news = "";
-    public static boolean[] s1 = new boolean[5];
+    private static String getStr0,getStr1,getStr2,getStr3,getStr4,getStr5;
+    private static String hot_news = "";
+    private static boolean[] s1 = new boolean[5];
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static void gatherNeed(Context context, int appWidgetId) throws InterruptedException, ExecutionException, TimeoutException, IOException {
@@ -43,12 +43,14 @@ public  class NewsPuller {
         HashMap<Integer, String> urls = x.hm_urls();
         s1 = NewsOnAirConfigureActivity.loadswitchPref( context, appWidgetId );
         if (s1[0]){
+
             Log.d(TAG, "0()");
+            ReadFromWeb tasker = new ReadFromWeb();
             getStr0 = tasker.execute(urls.get(1)).get(1,TimeUnit.MINUTES);
 
         }
         if (s1[1]){
-
+            ReadFromWeb tasker11 = new ReadFromWeb();
             Log.d(TAG, "1()");
             getStr1 = tasker11.execute(urls.get(2)).get(5, TimeUnit.MINUTES);
         }
@@ -74,6 +76,8 @@ public  class NewsPuller {
         }
         Log.d(TAG, "hot_news");
         hot_news= getStr0+getStr1+getStr2+getStr3+getStr4+getStr5;
+        Log.d(TAG, "hot_news");
+        Log.d(TAG, hot_news);
         String ss = Calanda.dater();
         NewsOnAirConfigureActivity.saveNewsPref(context,appWidgetId,hot_news);
         NewsOnAirConfigureActivity.saveNewsdate(context,appWidgetId,ss);
@@ -86,7 +90,8 @@ public  class NewsPuller {
         public String words1 = "";
         boolean counter = true;
 
-        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+       // @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+        @Override
         protected String doInBackground(String... params) {
             Log.d(TAG, "doInBackground()");
             //String  params= new String();
@@ -133,10 +138,10 @@ public  class NewsPuller {
 
         @Override
 
-        protected void onPostExecute(String resluts) {
+        protected void onPostExecute(String results) {
             Log.d(TAG, "onPostExecute()");
-            //handleResults(resluts, 0);
-            super.onPostExecute(resluts);
+            //handleResults(results, 0);
+            super.onPostExecute(results);
 
         }
 /*    public String  handleResults(String str1,int putMode){

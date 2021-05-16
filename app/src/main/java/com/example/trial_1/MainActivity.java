@@ -2,10 +2,8 @@ package com.example.trial_1;
 
 import android.os.Bundle;
 import android.widget.Button;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
@@ -15,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
 /*        Button mOkButton = (Button) findViewById(R.id.gotit);
                mOkButton.setOnClickListener(v -> onBackPressed());*/
         mOkButton.setOnClickListener(v -> onBackPressed());
