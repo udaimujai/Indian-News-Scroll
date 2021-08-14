@@ -10,7 +10,7 @@ import android.util.Log;
 
 public class ScreenReceiver extends BroadcastReceiver {
     public static final String SCREEN_STATE = "SCREEN_STATE";
-    public static IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_OFF);
+    public static IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
 private static String TAG = ScreenReceiver.class.getSimpleName();
     @Override
     public void onReceive(Context context, Intent intent) {
