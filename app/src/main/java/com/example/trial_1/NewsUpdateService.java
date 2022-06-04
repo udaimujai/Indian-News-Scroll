@@ -61,7 +61,7 @@ public class NewsUpdateService extends Service {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context
                 .getApplicationContext());
         //If screen has just been turned off, stop all threads and clear mAsyncTasks
-        if(Intent.ACTION_SCREEN_OFF.equals(screenState)){
+        if(Intent.ACTION_SCREEN_ON.equals(screenState)){
             //Log.d(TAG, "handleScreenState() ACTION_SCREEN_OFF");
                 UpdateWidgetService.onStartCommander(context, intent);
             //Toast.makeText(getApplicationContext(), "service Running",Toast.LENGTH_SHORT).show();
