@@ -15,7 +15,7 @@ private static String TAG = ScreenReceiver.class.getSimpleName();
     @Override
     public void onReceive(Context context, Intent intent) {
         //Log.d(TAG, "onReceive:ScreenReceiver");
-        Intent i = new Intent(context, PingWidgetUpdateService.class);
+        Intent i = new Intent(context, NewsUpdateService.class);
         i.putExtra(SCREEN_STATE, intent.getAction());
         context.startService(i);
     }

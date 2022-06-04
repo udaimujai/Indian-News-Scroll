@@ -3,7 +3,7 @@ package com.example.trial_1;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Calanda {
+public class Calander {
     public static String dater() {
         Calendar c=Calendar.getInstance();
         SimpleDateFormat dateformat=new SimpleDateFormat("dd");

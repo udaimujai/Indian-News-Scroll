@@ -41,7 +41,7 @@ public class NewsOnAir<ss> extends AppWidgetProvider {
         views.setTextViewText(R.id.DateView, loader2);
         Log.d(TAG, "setTextViewText");
         Util.registerWidgetStartPauseOnClickListener(context, appWidgetId, views);
-        Intent serviceIntent = new Intent(context.getApplicationContext(), PingWidgetUpdateService.class);
+        Intent serviceIntent = new Intent(context.getApplicationContext(), NewsUpdateService.class);
         serviceIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
         ContextCompat.startForegroundService(context, serviceIntent);
             // Instruct the widget manager to update the widget
@@ -63,6 +63,8 @@ public class NewsOnAir<ss> extends AppWidgetProvider {
             String loader2 = NewsOnAirConfigureActivity.loadNews(context, appWidgetId);
             Log.d(TAG, "onUpdate_outer" + loader2.getClass().getSimpleName());
             String jkl = "100";
+            //context.registerReceiver(mReceiver = new ScreenReceiver(), ScreenReceiver.filter);
+
             if (!loader2.equals((jkl))) {
                 try {
                     NewsPuller.gatherNeed(context, appWidgetId);

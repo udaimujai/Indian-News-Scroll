@@ -9,8 +9,8 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
-public class PingWidgetUpdateService extends Service {
-    private static String TAG = PingWidgetUpdateService.class.getSimpleName();
+public class NewsUpdateService extends Service {
+    private static String TAG = NewsUpdateService.class.getSimpleName();
     private static BroadcastReceiver mReceiver;
     @Override
     public IBinder onBind(Intent intent) {
@@ -34,8 +34,8 @@ public class PingWidgetUpdateService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        //Log.d(TAG, "onStartCommand()");
-    final Context context = PingWidgetUpdateService.this;
+        Log.d(TAG, "onStartCommand()");
+    final Context context = NewsUpdateService.this;
 
         if (intent != null) {
           //  Log.d(TAG, "screenState1");
@@ -50,14 +50,14 @@ public class PingWidgetUpdateService extends Service {
                // Log.d(TAG, "if intent came from a Widget click");
                 handleWidgetClick(context,widgetId, intent);
             else
-                Log.d(TAG, "Error: Got an unknown onStartCommand() in PingWidgetUpdateService");
+                Log.d(TAG, "Error: Got an unknown onStartCommand() in NewsUpdateService");
         }
         // If service get killed, after returning from here, restart
         return START_STICKY;
     }
     public void handleScreenState(String screenState, Intent intent) {
         Log.d(TAG, "        views.setImageViewResource(R.id.nxtNews, (R.drawable.ic_media_play));" + screenState);
-        final Context context = PingWidgetUpdateService.this;
+        final Context context = NewsUpdateService.this;
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context
                 .getApplicationContext());
         //If screen has just been turned off, stop all threads and clear mAsyncTasks
@@ -70,7 +70,7 @@ public class PingWidgetUpdateService extends Service {
     public static void handleWidgetClick(Context context, int widgetId, Intent intent) {
         //Get widget data from SharedPreferences
                 //Log.d(TAG, " handleWidgetClick");
-       // final Context context = PingWidgetUpdateService.this;
+       // final Context context = NewsUpdateService.this;
         UpdateWidgetService.onStartCommander(context,intent);
         //Toast.makeText(context.getApplicationContext(), "handleWidgetClick",Toast.LENGTH_SHORT).show();
 

@@ -78,7 +78,7 @@ public  class NewsPuller {
         hot_news= getStr0+getStr1+getStr2+getStr3+getStr4+getStr5;
         Log.d(TAG, "hot_news");
         Log.d(TAG, hot_news);
-        String ss = Calanda.dater();
+        String ss = Calander.dater();
         NewsOnAirConfigureActivity.saveNewsPref(context,appWidgetId,hot_news);
         NewsOnAirConfigureActivity.saveNewsdate(context,appWidgetId,ss);
         NewsOnAir.updateAppWidget(context,appWidgetManager  ,appWidgetId);
