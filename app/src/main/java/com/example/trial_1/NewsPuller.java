@@ -124,7 +124,7 @@ public  class NewsPuller {
                             line= line.replaceAll(sta_des,"");
                             line=line.replaceAll(end_des,"");
                             line=line.trim();
-                            words1 = words1 +"---"+ line;
+                            words1 = words1 + "\u272f" + "\u272f" + "\u272f"+ line;
                             //break;
                         }
                     }

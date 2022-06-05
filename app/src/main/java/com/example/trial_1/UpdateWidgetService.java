@@ -52,11 +52,11 @@ import java.util.Collections;
                 String dd2 = NewsOnAirConfigureActivity.loadNews(context, widgetId);
                 String loader2 = NewsOnAirConfigureActivity.loadDate(context,widgetId);
                 // Log.d(TAG, "checknews" + dd2);
-                String[] parts = dd2.split("---");
+                String[] parts = dd2.split("\u272f" + "\u272f" + "\u272f");
                 // Log.d(TAG, "afinder" + parts.length);
                 dd2 ="";
                 for (int i = 0; i < parts.length; i++) {
-                    parts[i] = parts[i] + "---";
+                    parts[i] = parts[i] + "\u272f" + "\u272f" + "\u272f";
                 }
                 RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.news_on_air);
                 Collections.shuffle(Arrays.asList(parts));
